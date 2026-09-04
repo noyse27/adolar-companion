@@ -12,8 +12,8 @@ jobs:
   windows-companion:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -26,7 +26,7 @@ jobs:
       - name: Build executable
         run: python -m PyInstaller adolar_radio.spec --clean --noconfirm
       - name: Upload executable
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: AdolarRadio-windows
           path: dist/AdolarRadio.exe
